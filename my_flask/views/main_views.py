@@ -1,11 +1,12 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, render_template
 from urllib.parse import urlparse
+import os
 
 main_bp = Blueprint('main', __name__)
 
+
 @main_bp.route('/')
 def index():
-    host = urlparse(request.base_url).hostname
-    url = f'http://{host}:3000/public/dashboard/1e49d05a-b978-4b3b-9c01-22faaa1aeaca'
-    iframe = f'<iframe src="{url}" frameborder="0" width="100%" height="100%" allowtransparency></iframe>'
-    return iframe, 200
+    metabase_url = os.getenv('metabase_url')
+    print(metabase_url)
+    return render_template('index.html', metabase_url=metabase_url), 200
