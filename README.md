@@ -1,13 +1,13 @@
 # section3_project
 
 ## 개요
-- [Metabase를 사용한 대시보드](rotbeer.duckdns.org)
+- [Metabase를 사용한 대시보드](http://rotbeer.duckdns.org)
   - 현재 문제가 있어 사용하지 않음
-- [Flask를 사용한 API](rotbeer.duckdns.org/api)
+- [Flask를 사용한 API](http://rotbeer.duckdns.org/api)
 
 ## 사용 방법
 1. csv_to_postgresql.py를 사용해 marketing_campaign.csv를 postgresql DB에 저장
-2. db_to_ml_pickle.ipynb를 사용해 db에서 데이터를 가져와 머신러닝을 모델을 만들고 피클 파일을 만듬
+2. db_to_ml_pickle.ipynb를 사용해 DB에서 데이터를 가져와 머신러닝을 모델을 만들고 피클 파일을 만듬
 3. 피클 파일을 my_flask 디렉토리에 옮기고 도커 이미지를 만듬
     ```
     docker build -t repo/name:tag <DIR>
